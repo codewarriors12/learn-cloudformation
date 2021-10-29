@@ -16,8 +16,17 @@ Parameters:
     Type: AWS::EC2::Subnet::Id
 
 Resources:
-  EC2Instance:
-    Type: AWS::EC2::Instance
+  EC2Instance1:
+    Type: AWS::EC2::Instance1
+    Properties:
+      ImageId: !Ref AMI
+      InstanceType: !Ref InstanceType
+      SubnetId: !Ref Subnet
+      Tags:
+        - Key: Name
+          Value: learn-cloudformation-1-parameters
+  EC2Instance2:
+    Type: AWS::EC2::Instance2
     Properties:
       ImageId: !Ref AMI
       InstanceType: !Ref InstanceType
@@ -25,18 +34,9 @@ Resources:
       Tags:
         - Key: Name
           Value: learn-cloudformation-2-parameters
-  EC2Instance2:
-    Type: AWS::EC2::Instance
-    Properties:
-      ImageId: !Ref AMI
-      InstanceType: !Ref InstanceType
-      SubnetId: !Ref Subnet
-      Tags:
-        - Key: Name
-          Value: learn-cloudformation-3-parameters
 
 Outputs:
-  OutputOfEC2Id: 
-    Value: !Ref EC2Instance
+  OutputOfEC1Id:
+    Value: !Ref EC2Instance1
     OutputOfEC2Id:
     Value: !Ref EC2Instance2
