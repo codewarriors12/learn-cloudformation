@@ -38,4 +38,5 @@ Resources:
 Outputs:
   OutputOfEC2Id: 
     Value: !Ref EC2Instance
+    OutputOfEC2Id:
     Value: !Ref EC2Instance2
